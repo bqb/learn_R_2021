@@ -196,3 +196,46 @@ n
 m %*% n
 n %*% m
 a <- 4:11
+r <- runif(11)
+r <- rnorm(5, mean=11,  sd=1)
+r
+set.seed(14)
+runif(5)
+runif(5)
+
+set.seed(14)
+runif(5)
+u = matrix(1, ncol=3, nrow=3)
+u
+u <- u * runif(length(u))
+u
+#
+# Chapter 1.6   Read and write files   p 24
+#
+txt <- "Here be an example\nwith newline to boot\n\tand taubularity\n"
+txt
+message(txt)
+f1 <- "/home/darb/github/learn_R_2021/foost.csv"
+file.exists(f1)
+d <- data.frame(id=1:10, name=letters[1:10], value=seq(10,28,2))
+d
+write.csv(d, 'test.csv', row.names=FALSE)
+write.table(d, 'test.dat', row.names=FALSE)
+file.exists('test.csv')
+file.exists('test.dat')
+getwd()
+file.path(getwd(), 'test.csv')
+d <- read.csv('test.csv', stringsAsFactors=FALSE)
+d
+d <- read.table('test.dat', stringsAsFactors=FALSE)
+d
+d <- read.table('test.dat', header=TRUE, stringsAsFactors=FALSE)
+d
+d <- readLines('test.csv')
+class(d)
+webpage <- readLines("http://bq.bz", warn=FALSE)
+head(webpage)
+webpage[10:55]
+
+list.files()
+list.files(pattern = 'csv$')
